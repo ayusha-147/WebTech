@@ -1,0 +1,37 @@
+.form-group{
+    padding: 5px;
+    border: 1px solid #556;
+    margin-bottom: 5px;
+}
+
+.form-group label{
+    color: rgb(216, 138, 22);
+    width: 80px;
+    display: inline-block;
+}
+
+.form-group input{
+    width: 60%;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.form-group input[type=radio]{
+    width: 3%;
+    height: 20px;
+}
+.form-group input[type=submit],input[type=reset]{
+    width: 80px;
+    border: none;
+    background-color: rgb(12, 230, 85);
+}
+
+.form-group input[type=reset]{
+    background-color: red;
+}
+
+.form-group :last-child{
+    border: none;
+}
