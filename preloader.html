@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+  margin: -76px 0 0 -76px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  display: none; /* Initially hidden */
+  animation: spin 2s linear infinite; /* Apply rotation animation */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  animation: animatebottom 1s;
+}
+
+@keyframes animatebottom { 
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+}
+
+/* Style for the loading text */
+#loadingText {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid #24b4fb;
+  background-color: #24b4fb;
+  border-radius: 0.9em;
+  padding: 0.8em 1.2em 0.8em 1em;
+  transition: all ease-in-out 0.2s;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#loadingText:hover {
+  background-color: #0071e2;
+}
+.content{
+    font-family: 'Courier New', Courier, monospace;
+}
+.heading{
+    color: palevioletred;
+}
+</style>
+</head>
+<body style="margin:0;">
+
+<!-- Button to start loading -->
+<div id="loadingText" onclick="startLoading()">
+  Click to Start Loading
+</div>
+
+<!-- Loader -->
+<div id="loader"></div>
+
+<!-- Content -->
+<div id="myDiv" class="animate-bottom">
+  <h1 class="heading">Welcome!</h1>
+  <p class="content">This is the newly loaded page..</p>
+</div>
+
+<script>
+function startLoading() {
+  // Show the loader
+  document.getElementById("loader").style.display = "block";
+  // Hide the loading text
+  document.getElementById("loadingText").style.display = "none";
+  // Start the timer to show the content after 5 seconds
+  setTimeout(showPage, 2000);
+}
+
+function showPage() {
+  // Hide the loader
+  document.getElementById("loader").style.display = "none";
+  // Hide the loading text
+  document.getElementById("loadingText").style.display = "none";
+  // Show the content
+  document.getElementById("myDiv").style.display = "block";
+}
+</script>
+
+</body>
+</html>
